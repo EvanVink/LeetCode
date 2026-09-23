@@ -1,0 +1,8 @@
+-- Last updated: 9/23/2026, 9:24:16 AM
+# Write your MySQL query statement below
+SELECT customer_id, COUNT(customer_id) AS count_no_trans
+FROM Visits
+LEFT JOIN Transactions
+ON Visits.visit_id = Transactions.visit_id
+WHERE Transactions.transaction_id IS NULL
+GROUP BY customer_id
